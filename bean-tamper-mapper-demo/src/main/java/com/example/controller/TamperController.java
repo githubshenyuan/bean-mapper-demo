@@ -5,5 +5,10 @@ package com.example.controller;
  * @version ideaIU-2018.2.5.win
  */
 public class TamperController {
+    public static void main(String[] args) {
+
+
+
+    }
 
 }
