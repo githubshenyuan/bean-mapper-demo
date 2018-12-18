@@ -15,7 +15,7 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://dozermapper.github.io/schema/bean-mapping http://dozermapper.github.io/schema/bean-mapping.xsd">
 
-    <mapping map-id="abutment" map-empty-string="false" relationship-type="cumulative" >
+    <mapping map-id="abutment" >
         <class-a>com.example.beandozerspringbootdemo.entity.SrcList</class-a>
         <class-b>com.example.beandozerspringbootdemo.entity.TarList</class-b>
         <field>
@@ -26,6 +26,11 @@
             <a >deepSrcEntities</a>
             <b>deepTarEntities</b>
         </field>
+        <field map-id="ab">
+            <a >deepSrcEntities[0]</a>
+            <b>deepTarEntity</b>
+        </field>
+
 
     </mapping>
     <mapping map-id="ab">

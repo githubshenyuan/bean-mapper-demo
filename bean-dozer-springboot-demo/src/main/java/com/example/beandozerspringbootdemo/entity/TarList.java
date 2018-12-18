@@ -10,6 +10,8 @@ public class TarList {
     private String tar;
     private List<DeepTarEntity> deepTarEntities;
 
+    private DeepTarEntity deepTarEntity;
+
     public String getTar() {
         return tar;
     }
@@ -24,5 +26,13 @@ public class TarList {
 
     public void setDeepTarEntities(List<DeepTarEntity> deepTarEntities) {
         this.deepTarEntities = deepTarEntities;
+    }
+
+    public DeepTarEntity getDeepTarEntity() {
+        return deepTarEntity;
+    }
+
+    public void setDeepTarEntity(DeepTarEntity deepTarEntity) {
+        this.deepTarEntity = deepTarEntity;
     }
 }
