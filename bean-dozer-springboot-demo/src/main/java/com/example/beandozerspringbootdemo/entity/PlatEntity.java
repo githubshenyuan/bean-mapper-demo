@@ -5,4 +5,5 @@ package com.example.beandozerspringbootdemo.entity;
  * @version ideaIU-2018.2.3.win_home
  */
 public class PlatEntity {
+
 }

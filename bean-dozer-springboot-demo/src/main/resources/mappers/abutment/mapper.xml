@@ -15,54 +15,44 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://dozermapper.github.io/schema/bean-mapping http://dozermapper.github.io/schema/bean-mapping.xsd">
 
-    <mapping map-id="abutment">
-        <class-a>com.example.beandozerspringbootdemo.entity.SchoolEntity</class-a>
-        <class-b>com.github.dozermapper.jmh.model.Person</class-b>
+    <mapping map-id="abutment" map-empty-string="false" relationship-type="cumulative" >
+        <class-a>com.example.beandozerspringbootdemo.entity.SrcList</class-a>
+        <class-b>com.example.beandozerspringbootdemo.entity.TarList</class-b>
         <field>
-            <a></a>
-            <b></b>
+            <a>src</a>
+            <b>tar</b>
         </field>
-        <field>
-            <a></a>
-            <b></b>
-        </field>
-        <field>
-            <a></a>
-            <b></b>
-        </field>
-        <field>
-            <a></a>
-            <b></b>
-        </field>
-        <field>
-            <a></a>
-            <b></b>
-        </field>
-        <field>
-            <a></a>
-            <b></b>
-        </field>
-        <field>
-            <a></a>
-            <b></b>
-        </field>
-        <field>
-            <a></a>
-            <b></b>
-        </field>
-        <field>
-            <a></a>
-            <b></b>
-        </field>
-        <field>
-            <a></a>
-            <b></b>
-        </field>
-        <field>
-            <a></a>
-            <b></b>
+        <field map-id="ab">
+            <a >deepSrcEntities</a>
+            <b>deepTarEntities</b>
         </field>
 
+    </mapping>
+    <mapping map-id="ab">
+        <class-a>com.example.beandozerspringbootdemo.entity.DeepSrcEntity</class-a>
+        <class-b>com.example.beandozerspringbootdemo.entity.DeepTarEntity</class-b>
+        <field >
+            <a key="">srcUuid</a>
+            <b>tarUuid</b>
+        </field>
+        <field>
+            <a>srcUser</a>
+            <b>tarUser</b>
+        </field>
+    </mapping>
+
+    <mapping map-id="bv">
+        <class-a>com.example.beandozerspringbootdemo.entity.DeepSrcEntity</class-a>
+        <class-b>com.example.beandozerspringbootdemo.entity.DeepTarEntity</class-b>
+        <field>
+            <a>srcUuid</a>
+            <b>tarUser</b>
+
+        </field>
+        <field>
+            <a>srcUser</a>
+            <b>tarUuid</b>
+        </field>
     </mapping>
 
 </mappings>
