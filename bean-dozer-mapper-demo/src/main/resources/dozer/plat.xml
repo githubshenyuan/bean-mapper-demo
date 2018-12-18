@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozermapper.github.io/schema/bean-mapping"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozermapper.github.io/schema/bean-mapping http://dozermapper.github.io/schema/bean-mapping.xsd">
+    <mapping type="one-way" >
+        <class-a>com.example.entity.FlatEntity</class-a>
+        <class-b>com.example.entity.CubeEntity</class-b>
+        <field>
+            <a >uuidSrc</a>
+            <b>userSrc.uuidSrc</b>
+        </field>
+        <field>
+            <a>userNameSrc</a>
+            <b>userSrc.userNameSrc</b>
+        </field>
+        <field>
+            <a>passwordSrc</a>
+            <b>userSrc.passwordSrc</b>
+        </field>
+        <field>
+            <a >uuidTar</a>
+            <b>userTar.uuidTar</b>
+        </field>
+        <field>
+            <a>userNameTar</a>
+            <b>userTar.userNameTar</b>
+        </field>
+        <field>
+            <a>passwordTar</a>
+            <b>userTar.passwordTar</b>
+        </field>
+    </mapping>
+
+</mappings>

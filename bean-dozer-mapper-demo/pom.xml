@@ -9,20 +9,21 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>bean-smooks-mapper-demo</artifactId>
+    <artifactId>bean-dozer-mapper-demo</artifactId>
+
 
     <dependencies>
+        <!--<dependency>-->
+            <!--<groupId>net.sf.dozer</groupId>-->
+            <!--<artifactId>dozer</artifactId>-->
+            <!--<version>5.4.0</version>-->
+        <!--</dependency>-->
+
         <dependency>
-            <groupId>org.milyn</groupId>
-            <artifactId>milyn-smooks-core</artifactId>
-            <version>1.7.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.milyn</groupId>
-            <artifactId>milyn-smooks-javabean</artifactId>
-            <version>1.7.1</version>
+            <groupId>com.github.dozermapper</groupId>
+            <artifactId>dozer-core</artifactId>
+            <version>6.4.1</version>
         </dependency>
 
     </dependencies>
-
 </project>
