@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -26,6 +27,7 @@ public class DozerController {
 
         SrcList srcList = new SrcList();
         srcList.setSrc("src");
+        srcList.setInputDate("1992/12/12");
         DeepSrcEntity deepSrcEntity = new DeepSrcEntity();
         List<DeepSrcEntity> deepSrcEntities = new ArrayList<>();
         deepSrcEntities.add(deepSrcEntity);

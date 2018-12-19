@@ -1,5 +1,6 @@
 package com.example.beandozerspringbootdemo.entity;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -8,6 +9,7 @@ import java.util.List;
  */
 public class TarList {
     private String tar;
+    private Date inputDate;
     private List<DeepTarEntity> deepTarEntities;
 
     private DeepTarEntity deepTarEntity;
@@ -34,5 +36,13 @@ public class TarList {
 
     public void setDeepTarEntity(DeepTarEntity deepTarEntity) {
         this.deepTarEntity = deepTarEntity;
+    }
+
+    public Date getInputDate() {
+        return inputDate;
+    }
+
+    public void setInputDate(Date inputDate) {
+        this.inputDate = inputDate;
     }
 }

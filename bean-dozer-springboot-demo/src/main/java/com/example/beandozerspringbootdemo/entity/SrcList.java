@@ -1,5 +1,6 @@
 package com.example.beandozerspringbootdemo.entity;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -8,6 +9,7 @@ import java.util.List;
  */
 public class SrcList {
     private String src;
+    private String inputDate;
     private List<DeepSrcEntity> deepSrcEntities;
 
 
@@ -25,5 +27,13 @@ public class SrcList {
 
     public void setDeepSrcEntities(List<DeepSrcEntity> deepSrcEntities) {
         this.deepSrcEntities = deepSrcEntities;
+    }
+
+    public String getInputDate() {
+        return inputDate;
+    }
+
+    public void setInputDate(String inputDate) {
+        this.inputDate = inputDate;
     }
 }

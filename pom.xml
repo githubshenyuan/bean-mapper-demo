@@ -12,6 +12,7 @@
         <module>bean-tamper-mapper-demo</module>
         <module>bean-smooks-mapper-demo</module>
         <module>bean-dozer-mapper-demo</module>
+        <module>bean-dozer-springboot-demo</module>
     </modules>
 
     <dependencies>

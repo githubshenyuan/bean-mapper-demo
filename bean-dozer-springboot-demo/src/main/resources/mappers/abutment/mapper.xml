@@ -15,12 +15,22 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://dozermapper.github.io/schema/bean-mapping http://dozermapper.github.io/schema/bean-mapping.xsd">
 
+    <configuration>
+        <variables>
+            <variable name="abc">1</variable>
+        </variables>
+    </configuration>
     <mapping map-id="abutment" >
         <class-a>com.example.beandozerspringbootdemo.entity.SrcList</class-a>
         <class-b>com.example.beandozerspringbootdemo.entity.TarList</class-b>
-        <field>
+        <field >
             <a>src</a>
             <b>tar</b>
+        </field>
+
+        <field>
+            <a date-format="yyyy/MM/dd">inputDate</a>
+            <b >inputDate</b>
         </field>
         <field map-id="ab">
             <a >deepSrcEntities</a>
@@ -30,9 +40,31 @@
             <a >deepSrcEntities[0]</a>
             <b>deepTarEntity</b>
         </field>
-
-
     </mapping>
+
+    <mapping map-id="abutment-1" >
+        <class-a>com.example.beandozerspringbootdemo.entity.SrcList</class-a>
+        <class-b>com.example.beandozerspringbootdemo.entity.TarList</class-b>
+        <field>
+            <a>src</a>
+            <b>tar</b>
+        </field>
+
+        <field>
+            <a date-format="yyyy-MM-dd">inputDate</a>
+            <b date-format="yyyy-MM-dd">inputDate</b>
+        </field>
+        <field map-id="ab">
+            <a >deepSrcEntities</a>
+            <b>deepTarEntities</b>
+        </field>
+        <field map-id="ab">
+            <a >deepSrcEntities[0]</a>
+            <b>deepTarEntity</b>
+        </field>
+    </mapping>
+
+
     <mapping map-id="ab">
         <class-a>com.example.beandozerspringbootdemo.entity.DeepSrcEntity</class-a>
         <class-b>com.example.beandozerspringbootdemo.entity.DeepTarEntity</class-b>
@@ -56,8 +88,9 @@
         </field>
         <field>
             <a>srcUser</a>
-            <b>tarUuid</b>
+            <b >tarUuid</b>
         </field>
     </mapping>
+
 
 </mappings>
