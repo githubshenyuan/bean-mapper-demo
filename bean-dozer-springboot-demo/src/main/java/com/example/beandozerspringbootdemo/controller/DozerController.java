@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import java.util.*;
 
+
 /**
  * @author sh on 2018/12/18 20:32
  * @version ideaIU-2018.2.3.win_home
@@ -23,8 +24,6 @@ public class DozerController {
 
     @RequestMapping("dozer")
     public String demo() {
-        Map map = MatchRationService.businessMatchRation;
-        Map map1 = MatchRationService.businessMatchRation;
         SrcList srcList = new SrcList();
         srcList.setSrc("src");
         srcList.setInputDate("1992/12/12");
@@ -38,8 +37,6 @@ public class DozerController {
         System.out.println("");
         Map<String, RuleMapEntity> map = new HashMap();
         RuleMapEntity mapEntity = new RuleMapEntity();
-        mapEntity.setStatus("1");
-        mapEntity.setValue("123,123,123");
         map.put("ide", mapEntity);
         Map<String,Map<String, RuleMapEntity>> mapMap=new HashMap<>();
         mapMap.put("41",map);

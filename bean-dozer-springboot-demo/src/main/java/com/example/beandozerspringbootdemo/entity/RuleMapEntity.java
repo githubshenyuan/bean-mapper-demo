@@ -19,11 +19,20 @@ public class RuleMapEntity {
         this.channelId = channelId;
     }
 
-    public Map<String, String> getRules() {
-        return rules;
+
+    public Map<String, String> getStaus() {
+        return staus;
     }
 
-    public void setRules(Map<String, String> rules) {
-        this.rules = rules;
+    public void setStaus(Map<String, String> staus) {
+        this.staus = staus;
+    }
+
+    public Map<String, String> getValue() {
+        return value;
+    }
+
+    public void setValue(Map<String, String> value) {
+        this.value = value;
     }
 }
