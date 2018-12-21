@@ -19,8 +19,7 @@ import java.util.*;
  */
 @RestController
 public class DozerController {
-    @Resource
-    Mapper mapper;
+
 
     @RequestMapping("dozer")
     public String demo() {
