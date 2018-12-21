@@ -1,7 +1,7 @@
 package com.example.beandozerspringbootdemo.entity;
 
-import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author sh on 2018/12/18 21:35
@@ -11,6 +11,7 @@ public class SrcList {
     private String src;
     private String inputDate;
     private List<DeepSrcEntity> deepSrcEntities;
+    private Map<String, Map<String, RuleMapEntity>> mapMap;
 
 
     public String getSrc() {
@@ -35,5 +36,13 @@ public class SrcList {
 
     public void setInputDate(String inputDate) {
         this.inputDate = inputDate;
+    }
+
+    public Map<String, Map<String, RuleMapEntity>> getMapMap() {
+        return mapMap;
+    }
+
+    public void setMapMap(Map<String, Map<String, RuleMapEntity>> mapMap) {
+        this.mapMap = mapMap;
     }
 }

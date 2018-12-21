@@ -11,6 +11,7 @@ public class TarList {
     private String tar;
     private Date inputDate;
     private List<DeepTarEntity> deepTarEntities;
+    private String value;
 
     private DeepTarEntity deepTarEntity;
 
@@ -44,5 +45,13 @@ public class TarList {
 
     public void setInputDate(Date inputDate) {
         this.inputDate = inputDate;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 }
