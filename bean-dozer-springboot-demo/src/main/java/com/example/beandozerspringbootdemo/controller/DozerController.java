@@ -1,5 +1,6 @@
 package com.example.beandozerspringbootdemo.controller;
 
+import com.example.beandozerspringbootdemo.common.service.MatchRationService;
 import com.example.beandozerspringbootdemo.entity.DeepSrcEntity;
 import com.example.beandozerspringbootdemo.entity.RuleMapEntity;
 import com.example.beandozerspringbootdemo.entity.SrcList;
@@ -22,7 +23,8 @@ public class DozerController {
 
     @RequestMapping("dozer")
     public String demo() {
-
+        Map map = MatchRationService.businessMatchRation;
+        Map map1 = MatchRationService.businessMatchRation;
         SrcList srcList = new SrcList();
         srcList.setSrc("src");
         srcList.setInputDate("1992/12/12");
