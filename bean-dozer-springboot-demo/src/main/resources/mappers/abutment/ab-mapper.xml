@@ -15,6 +15,12 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://dozermapper.github.io/schema/bean-mapping http://dozermapper.github.io/schema/bean-mapping.xsd">
 
-
-
+    <mapping map-id="abcd">
+        <class-a>java.util.Map</class-a>
+        <class-b>com.example.beandozerspringbootdemo.entity.SrcList</class-b>
+        <field>
+            <a key="abc">this</a>
+            <b>userEntity.userName</b>
+        </field>
+    </mapping>
 </mappings>

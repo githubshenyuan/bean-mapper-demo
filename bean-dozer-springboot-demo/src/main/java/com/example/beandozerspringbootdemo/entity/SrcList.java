@@ -12,6 +12,8 @@ public class SrcList {
     private String inputDate;
     private List<DeepSrcEntity> deepSrcEntities;
     private Map<String, Map<String, RuleMapEntity>> mapMap;
+    private UserEntity userEntity;
+
 
 
     public String getSrc() {
@@ -44,5 +46,13 @@ public class SrcList {
 
     public void setMapMap(Map<String, Map<String, RuleMapEntity>> mapMap) {
         this.mapMap = mapMap;
+    }
+
+    public UserEntity getUserEntity() {
+        return userEntity;
+    }
+
+    public void setUserEntity(UserEntity userEntity) {
+        this.userEntity = userEntity;
     }
 }

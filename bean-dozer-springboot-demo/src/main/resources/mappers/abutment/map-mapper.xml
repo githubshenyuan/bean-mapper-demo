@@ -19,7 +19,7 @@
         <class-a>java.util.Map</class-a>
         <class-b>com.example.beandozerspringbootdemo.entity.TarList</class-b>
         <field>
-            <a key="ide">this.value</a>
+            <a key="ide">this</a>
             <b>this</b>
         </field>
     </mapping>

@@ -20,7 +20,18 @@ import java.util.*;
 @RestController
 public class DozerController {
 
+    @Resource
+    Mapper mapper;
+    @RequestMapping("do")
+    public String dozer() {
+        Map<String, String> map = new HashMap<>();
+        map.put("abc", "username");
+        SrcList srcList = new SrcList();
+        mapper.map(map, srcList,"abcd");
 
+        System.out.println("");
+        return "do";
+    }
     @RequestMapping("dozer")
     public String demo() {
         SrcList srcList = new SrcList();
