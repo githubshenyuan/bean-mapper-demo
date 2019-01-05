@@ -6,6 +6,7 @@ import com.example.beandozerspringbootdemo.entity.RuleMapEntity;
 import com.example.beandozerspringbootdemo.entity.SrcList;
 import com.example.beandozerspringbootdemo.entity.TarList;
 import com.github.dozermapper.core.Mapper;
+import org.springframework.cglib.reflect.FastClass;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,11 +25,13 @@ public class DozerController {
     Mapper mapper;
     @RequestMapping("do")
     public String dozer() {
-        Map<String, String> map = new HashMap<>();
-        map.put("abc", "username");
+        Map<String, Map> map = new HashMap<>();
+
+        Map<String, String> map1 = new HashMap<>();
+        map1.put("cdf", "123456");
+        map.put("abc", map1);
         SrcList srcList = new SrcList();
         mapper.map(map, srcList,"abcd");
-
         System.out.println("");
         return "do";
     }
@@ -55,5 +58,9 @@ public class DozerController {
         Map map1 = srcList.getMapMap();
         mapper.map(map1, tarList,"abutment-map");
         return "dozer";
+    }
+
+    public static void main(String[] args) {
+        FastClass fastClass = FastClass.create(SrcList.class);
     }
 }
