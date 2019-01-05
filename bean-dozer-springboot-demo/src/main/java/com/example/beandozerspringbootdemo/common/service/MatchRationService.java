@@ -1,6 +1,8 @@
 package com.example.beandozerspringbootdemo.common.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -8,39 +10,59 @@ import java.util.Map;
  * @version ideaIU-2018.2.3.win_home
  */
 public class MatchRationService {
-    public static Map<String, Map> defaultMatchRation = new HashMap<>();
-    public static Map<String, Map> businessMatchRation = new HashMap<>();
-
-    static {
-        setGuoXinMatchRation();
+    public final static Map<String, Map<String, String>> defaultMatchRation = new HashMap<>();
+    public final static Map<String, Map<String, List<MatchEntity>>> businessMatchRation = new HashMap<>();
+    public final static Map<String, Map<String, String>> validateMatchRation = new HashMap<>();
+    static{
+        setValue();
     }
 
-    private static void setGuoXinMatchRation() {
-        Map<String,String> defaultMap = new HashMap<>();
-        defaultMap.put("1", "1");
-        defaultMap.put("2", "2");
-        defaultMap.put("3", "3");
-        defaultMap.put("4", "4");
-        defaultMap.put("5", "5");
-        defaultMap.put("6", "6");
-        defaultMap.put("7", "7");
-        defaultMap.put("8", "8");
-        defaultMap.put("9", "9");
-        defaultMap.put("0", "0");
-        defaultMap.put("10", "10");
-        defaultMap.put("11", "11");
-        defaultMap.put("12", "12");
-        defaultMap.put("13", "13");
-        defaultMatchRation.put("41", defaultMap);
-        Map<String,String> businessMap = new HashMap<>();
-        businessMap.put("1", "1");
-        businessMap.put("2", "2");
-        businessMap.put("3", "3");
-        businessMap.put("4", "4");
-        businessMap.put("5", "5");
-        businessMap.put("6", "6");
+    private static void setValue() {
 
-        businessMatchRation.put("41", businessMap);
+        List<MatchEntity> matchEntities = new ArrayList<>();
+        MatchEntity matchEntity1;
+        matchEntity1 = new MatchEntity("41","business","validateService","validateData","1");
+        matchEntities.add(matchEntity1);
+        matchEntity1 = new MatchEntity("41","business","validateService","validateBusiness","1");
+        matchEntities.add(matchEntity1);
+        matchEntity1 = new MatchEntity("41","business","validateService","cancelValidateData","1");
+        matchEntities.add(matchEntity1);
+
+        for (MatchEntity matchEntity : matchEntities) {
+            switch (matchEntity.getType()) {
+                case "default":
+                    Map<String,String> map = defaultMatchRation.get(matchEntity.getChannelId());
+                    if (map == null) {
+                        defaultMatchRation.put(matchEntity.getChannelId(), new HashMap<>());
+                        map = defaultMatchRation.get(matchEntity.getChannelId());
+                    }
+                    map.put(matchEntity.getFlag()+"_"+matchEntity.getKey(), matchEntity.getValue());
+                    break;
+                case "business":
+                    Map<String,List<MatchEntity>> businessMap = businessMatchRation.get(matchEntity.getChannelId());
+                    if (businessMap == null) {
+                        businessMatchRation.put(matchEntity.getChannelId(), new HashMap<>());
+                        businessMap = businessMatchRation.get(matchEntity.getChannelId());
+                    }
+                    List<MatchEntity> matchEntityList = businessMap.get(matchEntity.getFlag());
+                    if (matchEntityList == null) {
+                        businessMap.put(matchEntity.getFlag(), new ArrayList<>());
+                        matchEntityList = businessMap.get(matchEntity.getFlag());
+                    }
+                    matchEntityList.add(matchEntity);
+                    break;
+                case "validate":
+                    Map<String,String> validateMap = validateMatchRation.get(matchEntity.getChannelId());
+                    if (validateMap == null) {
+                        validateMatchRation.put(matchEntity.getChannelId(), new HashMap<>());
+                        validateMap = validateMatchRation.get(matchEntity.getChannelId());
+                    }
+                    validateMap.put(matchEntity.getKey(), matchEntity.getValue());
+                    break;
+                default:
+                    System.out.println("马哥你比");
+            }
+        }
 
     }
 }

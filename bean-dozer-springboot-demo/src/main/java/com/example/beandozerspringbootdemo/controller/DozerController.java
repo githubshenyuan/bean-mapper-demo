@@ -1,16 +1,20 @@
 package com.example.beandozerspringbootdemo.controller;
 
+import com.example.beandozerspringbootdemo.common.service.MatchEntity;
 import com.example.beandozerspringbootdemo.common.service.MatchRationService;
 import com.example.beandozerspringbootdemo.entity.DeepSrcEntity;
 import com.example.beandozerspringbootdemo.entity.RuleMapEntity;
 import com.example.beandozerspringbootdemo.entity.SrcList;
 import com.example.beandozerspringbootdemo.entity.TarList;
+import com.example.beandozerspringbootdemo.service.InsureService;
 import com.github.dozermapper.core.Mapper;
 import org.springframework.cglib.reflect.FastClass;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.*;
 
 
@@ -23,8 +27,11 @@ public class DozerController {
 
     @Resource
     Mapper mapper;
+    @Resource
+    InsureService insureService;
     @RequestMapping("do")
     public String dozer() {
+
         Map<String, Map> map = new HashMap<>();
 
         Map<String, String> map1 = new HashMap<>();
@@ -60,6 +67,11 @@ public class DozerController {
         return "dozer";
     }
 
+    @RequestMapping("ma")
+    public String match() {
+        insureService.Validate("41");
+        return "ma";
+    }
     public static void main(String[] args) {
         FastClass fastClass = FastClass.create(SrcList.class);
     }
