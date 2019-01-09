@@ -9,7 +9,7 @@ public class ResultData {
     private String message;
     private Object data;
 
-    private ResultData(){
+    public ResultData(){
         this.code = "200";
         this.message = "SUCCESS";
     }

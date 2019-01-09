@@ -8,17 +8,19 @@ public class MatchEntity {
     //
     private String channelId;
     private String type;
-    private String flag;
+    private String scene;
     private String key;
     private String value;
+    private String description;
 
-    MatchEntity(String channelId, String type, String flag, String key, String value) {
+    MatchEntity(String channelId, String type, String scene, String key, String value) {
         this.channelId = channelId;
         this.type = type;
-        this.flag = flag;
+        this.scene = scene;
         this.key = key;
         this.value = value;
     }
+
     public String getChannelId() {
         return channelId;
     }
@@ -35,12 +37,12 @@ public class MatchEntity {
         this.type = type;
     }
 
-    public String getFlag() {
-        return flag;
+    public String getScene() {
+        return scene;
     }
 
-    public void setFlag(String flag) {
-        this.flag = flag;
+    public void setScene(String scene) {
+        this.scene = scene;
     }
 
     public String getKey() {
@@ -57,5 +59,13 @@ public class MatchEntity {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

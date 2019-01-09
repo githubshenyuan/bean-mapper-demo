@@ -1,5 +1,6 @@
 package com.example.beandozerspringbootdemo.controller;
 
+import com.example.beandozerspringbootdemo.common.constants.ResultData;
 import com.example.beandozerspringbootdemo.common.service.MatchEntity;
 import com.example.beandozerspringbootdemo.common.service.MatchRationService;
 import com.example.beandozerspringbootdemo.entity.DeepSrcEntity;
@@ -68,9 +69,16 @@ public class DozerController {
     }
 
     @RequestMapping("ma")
-    public String match() {
-        insureService.Validate("41");
-        return "ma";
+    public ResultData match() {
+        ResultData resultData;
+        try {
+            resultData = insureService.Validate("41");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            resultData = new ResultData();
+        }
+
+        return resultData;
     }
     public static void main(String[] args) {
         FastClass fastClass = FastClass.create(SrcList.class);

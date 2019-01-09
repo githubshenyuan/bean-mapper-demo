@@ -27,6 +27,8 @@ public class MatchRationService {
         matchEntities.add(matchEntity1);
         matchEntity1 = new MatchEntity("41","business","validateService","cancelValidateData","1");
         matchEntities.add(matchEntity1);
+        //matchEntity1 = new MatchEntity("41","business","validateService","cancelVal","1");
+        //matchEntities.add(matchEntity1);
 
         for (MatchEntity matchEntity : matchEntities) {
             switch (matchEntity.getType()) {
@@ -36,7 +38,7 @@ public class MatchRationService {
                         defaultMatchRation.put(matchEntity.getChannelId(), new HashMap<>());
                         map = defaultMatchRation.get(matchEntity.getChannelId());
                     }
-                    map.put(matchEntity.getFlag()+"_"+matchEntity.getKey(), matchEntity.getValue());
+                    map.put(matchEntity.getScene()+"_"+matchEntity.getKey(), matchEntity.getValue());
                     break;
                 case "business":
                     Map<String,List<MatchEntity>> businessMap = businessMatchRation.get(matchEntity.getChannelId());
@@ -44,10 +46,10 @@ public class MatchRationService {
                         businessMatchRation.put(matchEntity.getChannelId(), new HashMap<>());
                         businessMap = businessMatchRation.get(matchEntity.getChannelId());
                     }
-                    List<MatchEntity> matchEntityList = businessMap.get(matchEntity.getFlag());
+                    List<MatchEntity> matchEntityList = businessMap.get(matchEntity.getScene());
                     if (matchEntityList == null) {
-                        businessMap.put(matchEntity.getFlag(), new ArrayList<>());
-                        matchEntityList = businessMap.get(matchEntity.getFlag());
+                        businessMap.put(matchEntity.getScene(), new ArrayList<>());
+                        matchEntityList = businessMap.get(matchEntity.getScene());
                     }
                     matchEntityList.add(matchEntity);
                     break;
