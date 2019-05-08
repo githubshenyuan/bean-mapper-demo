@@ -7,6 +7,7 @@ package com.example.beandozerspringbootdemo.entity;
 public class DeepTarEntity {
     private String tarUuid;
     private String tarUser;
+    private String sex;
 
     public String getTarUuid() {
         return tarUuid;
@@ -22,5 +23,13 @@ public class DeepTarEntity {
 
     public void setTarUser(String tarUser) {
         this.tarUser = tarUser;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 }

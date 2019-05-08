@@ -1,16 +1,13 @@
 package com.example.beandozerspringbootdemo.service;
 
 import com.example.beandozerspringbootdemo.common.constants.ResultData;
-
 import com.example.beandozerspringbootdemo.common.service.MatchEntity;
 import com.example.beandozerspringbootdemo.common.service.MatchRationService;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.lang.reflect.Method;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author sh on 2019/1/5 22:10
@@ -23,7 +20,6 @@ public class InsureService {
     @Resource
     BusinessService businessService;
 
-    @Transactional(rollbackFor = Exception.class)
     public ResultData Validate(String abc) throws Exception {
         Class<ValidateService> clazz = ValidateService.class;
         List<MatchEntity> business = MatchRationService.businessMatchRation.get(abc).get("validateService");

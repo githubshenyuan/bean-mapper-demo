@@ -21,12 +21,12 @@ public class MatchRationService {
 
         List<MatchEntity> matchEntities = new ArrayList<>();
         MatchEntity matchEntity1;
-        matchEntity1 = new MatchEntity("41","business","validateService","validateData","1");
-        matchEntities.add(matchEntity1);
+        //matchEntity1 = new MatchEntity("41","business","validateService","validateData","1");
+        //matchEntities.add(matchEntity1);
         matchEntity1 = new MatchEntity("41","business","validateService","validateBusiness","1");
         matchEntities.add(matchEntity1);
-        matchEntity1 = new MatchEntity("41","business","validateService","cancelValidateData","1");
-        matchEntities.add(matchEntity1);
+        //matchEntity1 = new MatchEntity("41","business","validateService","cancelValidateData","1");
+        //matchEntities.add(matchEntity1);
         //matchEntity1 = new MatchEntity("41","business","validateService","cancelVal","1");
         //matchEntities.add(matchEntity1);
 

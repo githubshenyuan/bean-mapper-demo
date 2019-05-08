@@ -3,10 +3,7 @@ package com.example.beandozerspringbootdemo.controller;
 import com.example.beandozerspringbootdemo.common.constants.ResultData;
 import com.example.beandozerspringbootdemo.common.service.MatchEntity;
 import com.example.beandozerspringbootdemo.common.service.MatchRationService;
-import com.example.beandozerspringbootdemo.entity.DeepSrcEntity;
-import com.example.beandozerspringbootdemo.entity.RuleMapEntity;
-import com.example.beandozerspringbootdemo.entity.SrcList;
-import com.example.beandozerspringbootdemo.entity.TarList;
+import com.example.beandozerspringbootdemo.entity.*;
 import com.example.beandozerspringbootdemo.service.InsureService;
 import com.github.dozermapper.core.Mapper;
 import org.springframework.cglib.reflect.FastClass;
@@ -30,6 +27,29 @@ public class DozerController {
     Mapper mapper;
     @Resource
     InsureService insureService;
+
+    @RequestMapping("ge")
+    public String general() {
+        DeepSrcEntity deepSrcEntity = new DeepSrcEntity();
+        DeepTarEntity deepTarEntity = new DeepTarEntity();
+        deepSrcEntity.setSex("12345");
+
+        mapper.map(deepSrcEntity, deepTarEntity);
+        System.out.println("");
+
+        return "ge";
+    }
+
+    @RequestMapping("sim")
+    public String dozerSim() {
+
+        DeepSrcEntity deepSrcEntity = new DeepSrcEntity();
+        deepSrcEntity.setSrcUuid("1234567");
+        DeepTarEntity deepTarEntity = new DeepTarEntity();
+        mapper.map(deepSrcEntity,deepTarEntity,"ab");
+        return "sim";
+    }
+
     @RequestMapping("do")
     public String dozer() {
 
@@ -68,11 +88,27 @@ public class DozerController {
         return "dozer";
     }
 
+    @RequestMapping("si")
+    public String simple() {
+        List<DeepSrcEntity> deepSrcEntities = new ArrayList<>();
+        DeepSrcEntity deepSrcEntity = new DeepSrcEntity();
+        deepSrcEntity.setSrcUuid("123");
+        deepSrcEntity.setSrcUser("job");
+        deepSrcEntities.add(deepSrcEntity);
+
+        List<DeepTarEntity> deepTarEntities = new ArrayList<>();
+        mapper.map(deepSrcEntities, deepTarEntities, "list");
+        System.out.println("");
+        return "si";
+    }
     @RequestMapping("ma")
     public ResultData match() {
         ResultData resultData;
         try {
+            Long start = System.currentTimeMillis();
             resultData = insureService.Validate("41");
+            Long end = System.currentTimeMillis();
+            System.out.println("耗时：" + (end - start) / 1000.0);
         } catch (Exception ex) {
             ex.printStackTrace();
             resultData = new ResultData();

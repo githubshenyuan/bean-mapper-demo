@@ -64,12 +64,23 @@
         </field>
     </mapping>
 
+    <mapping map-id="list" wildcard="false">
+        <class-a >java.util.ArrayList</class-a>
+        <class-b>java.util.ArrayList</class-b>
+        <field map-id="ab">
+            <a>this</a>
+            <b>this</b>
+            <a-hint>com.example.beandozerspringbootdemo.entity.DeepSrcEntity</a-hint>
+            <b-hint>com.example.beandozerspringbootdemo.entity.DeepTarEntity</b-hint>
+            <a-deep-index-hint></a-deep-index-hint>
+        </field>
+    </mapping>
 
-    <mapping map-id="ab">
+    <mapping map-id="ab" wildcard="false" map-null="false">
         <class-a>com.example.beandozerspringbootdemo.entity.DeepSrcEntity</class-a>
         <class-b>com.example.beandozerspringbootdemo.entity.DeepTarEntity</class-b>
-        <field >
-            <a key="">srcUuid</a>
+        <field>
+            <a>srcUuid</a>
             <b>tarUuid</b>
         </field>
         <field>

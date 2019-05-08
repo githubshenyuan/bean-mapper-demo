@@ -7,6 +7,7 @@ package com.example.beandozerspringbootdemo.entity;
 public class DeepSrcEntity {
     private String srcUuid;
     private String srcUser;
+    private String sex;
 
     public String getSrcUuid() {
         return srcUuid;
@@ -22,5 +23,13 @@ public class DeepSrcEntity {
 
     public void setSrcUser(String srcUser) {
         this.srcUser = srcUser;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 }
